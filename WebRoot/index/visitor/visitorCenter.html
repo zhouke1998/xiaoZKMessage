@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="小ZK留言"/>
+    <meta name="description" content="小ZK留言网-信息查看！" />
+    <link href="../css/page_header.css" rel="stylesheet">
+    <!---footCss --->
+    <link href="../../messageBoard/css/messageBoardFoot.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/visitorCenter.js"></script>
+    <!---personalMessage --->
+    <link type="text/css" href="css/visitMessage.css" rel="stylesheet" >
+
+    <!---hisBoard --->
+    <link href="../css/board.css" rel="stylesheet">
+    <!---本页面css --->
+    <link href="css/visitorCenter.css" rel="stylesheet">
+
+    <title>小ZK-查看信息</title>
+</head>
+<body  ng-app ="myApp" class="clear">
+    <div id="header">
+        <div class="wrap clear">
+            <h1 id="logo"><a href="#"><img src="../img/logo_img/logo.png"/> </a> </h1>
+            <ul class="nav">
+                <li><a href="#">首页</a> </li>
+                <li><a href="#">留言板</a> </li>
+                <li><a href="#">个人中心</a> </li>
+            </ul>
+            <p>
+                您好,<a id="login_btn" href="#">请登录</a>
+            </p>
+        </div>
+    </div>
+    <div id="side_nav">
+        <ul>
+            <li>
+                <a id="btn_perMess" href="javascript:">
+                    <label>
+                        <span class="nor">TA的信息</span>
+                        <span class="active">TA信息</span>
+                    </label>
+                </a>
+            </li>
+
+            <li>
+                <a  id="btn_hisBoard"  href="javascript:">
+                    <label>
+                        <span class="nor">TA的留言</span>
+                        <span class="active">TA的留言</span>
+                    </label>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="personalMessage">
+        <form action="#" id="mes">
+            <div class="form_group">
+                <label>用户名:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>账号:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>邮箱:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>年龄:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>性别:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>爱好:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>所在地:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+        </form>
+    </div >
+    <div id="content" class="hisBoard">
+        <div class="title leaveMessage">
+            <h2><em>MESSAGE</em><span>TA的留言</span></h2>
+            <div class="leaveMessageContent">
+                <ul>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>200</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>199</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>198</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>197</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>196</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>195</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>194</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>193</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>192</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>191</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pages clear">
+                    <span class="jump">转到<input class="input_num" type="number"/>页<input class="input_certain" type="button" value="确定"/> </span>
+                    <a href="javascript:" class="next_page">下一页</a>
+                    <a href="javascript:" last_page>尾页</a>
+                    <span class="count">
+                            <a href="javascript:" class="num" value="99">99</a>
+                            <a >...</a>
+                            <a href="javascript:" class="num" value="4">4</a>
+                            <a href="javascript:" class="num" value="3">3</a>
+                            <a href="javascript:" class="num" value="2">2</a>
+                            <span>1</span>
+                        </span>
+                    <a href="javascript:" class="first_page">首页</a>
+                    <a href="javascript:" class="front_page">上一页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="return_top" style="display:none;">
+        <a href="javascript:">
+        	<i class="ico_top"></i>
+        	<span>顶部</span>
+        </a>
+    </div>
+    <div id="footer">
+        <p class="copyright">
+            Copyright © ZK All Rights Reserved.
+        </p>
+    </div>
+</body>
+</html>

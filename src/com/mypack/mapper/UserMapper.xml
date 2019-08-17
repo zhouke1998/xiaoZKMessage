@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mypack.mapper.UserMapper">
+	<select id="login" resultType="map" parameterType="user">
+		SELECT count(*) as count,username from users where id=#{id} and password=#{password};
+	</select>
+	
+	<select id="queryLikeMessageId" parameterType="string" resultType="string">
+		SELECT likeMessageId FROM users WHERE id=#{arg0}
+	</select>
+	
+	<!-- 查询留言id是否存在 -->
+	<select id="isCorrectId" resultType="int" parameterType="string">
+		select count(*) from content where messageId=#{arg0}
+	</select>
+	
+	<!-- 查询此条留言点赞的人 -->
+	<select id="queryLikePeopleId" parameterType="string" resultType="string">
+		select likesPeopleId from content where messageId=#{arg0};
+	</select>
+	
+	<!-- 更新点赞人数和点赞的人 -->
+	<update id="updateLikePeopleCount1" parameterType="string">
+		UPDATE content SET likeNum=(likeNum+1) WHERE messageId=#{arg0}
+	</update>
+	<update id="updateLikePeopleCount2" parameterType="string">
+		UPDATE content SET likeNum=(likeNum-1) WHERE messageId=#{arg0}
+	</update>
+	<update id="updateLikePeople" parameterType="content">
+		UPDATE content SET likesPeopleId=#{likesPeopleId} WHERE messageId=#{messageId}
+	</update>
+	<update id="updateLikeMessageId" parameterType="user">
+		UPDATE users SET likeMessageId=#{likeMessageId} WHERE id=#{id}
+	</update>
+	
+	<select id="check_exist" parameterType="user" resultType="int">
+		SELECT count(*) FROM users
+		<where>
+            <if test="username!=null and username!=''">
+                and username=#{username}
+            </if>
+            <if test="id!=null and id!=''">
+                and  id = #{id}
+            </if>
+        </where>
+	</select>
+	
+	<!-- 查询用户信息 -->
+	<select id="queryPersonalMessage" parameterType="string" resultType="user">
+		SELECT id,username,email,age,sex,hobbies,adress FROM users WHERE username=#{arg0}
+	</select>
+	
+	<select id="getMaxId" resultType="int">
+		SELECT MAX(id) AS id FROM users
+	</select>
+	
+	<insert id="insertNewUser" parameterType="user">
+		INSERT INTO users VALUES(#{id},#{username},#{password},'',#{hobbies},#{email},#{age},#{sex},#{adress})
+	</insert>
+	<!-- 修改自己的信息 -->
+	<update id="updateMessage" parameterType="user">
+		UPDATE users SET email = #{email}, age = #{age},sex=#{sex},hobbies=#{hobbies},adress=#{adress} WHERE username = #{username}
+	</update>
+	
+	<update id="updatePassword" parameterType="user">
+		UPDATE users SET password=#{password} WHERE username = #{username};
+	</update>
+</mapper>

@@ -1,0 +1,70 @@
+﻿@charset "utf-8";
+
+#reset_body{width:100%;}
+.content{width:1000px; margin:0 auto;}
+.content .tips,#no_find{width:100%; text-align:center;}
+.tips i , #no_find i{
+    width: 25px;
+    height: 24px;
+    line-height: 35px;
+    vertical-align: middle;
+    background-image: url(../img/common.png);
+    background-position: 0 -358px;
+    background-repeat: no-repeat;
+    background-color: none;
+}
+.tips span ,#no_find p {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 35px;
+    vertical-align: middle;
+    color: #2f86f6;
+}
+#no_find{margin-top:200px;}
+.tips span b,#no_find b{color:#000;}
+.content .question_wrap{margin-top:60px;}
+.content .question_wrap>div{margin-top:50px;}
+.content .question p{}
+.content .question_wrap>div span{display:inline-block; box-sizing:border-box; text-align:center; color:#000; font-size:20px; font-weight:100;}
+.content .question_wrap .box_left{width:50%; padding:10px 30px;}
+.content .question_wrap .box_right{width:45%; padding:10px 30px;}
+
+.mod-btn {
+    background-color: #2f86f6;
+    color: #fff;
+    box-shadow: 0 3px 0 #266ecb;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 2px;
+    cursor: pointer;
+    -webkit-transition: color .2s,background-color .2s;
+    transition: color .2s,background-color .2s;
+    margin:0 auto;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.mod-btn>span {
+    margin: 0 0 0 20px;
+    padding: 0 20px 0 0;
+    min-width: 80px;
+    height: 37px;
+    line-height: 37px;
+    font-size: 16px;
+    float: left;
+    z-index: 1111;
+    text-align: center;
+    background-position: right 0;
+}
+
+.mod-btn:hover {
+    background-color: #4692f4;
+}
+
+.pwd_on_off{display:inline-block; width:16px; height:16px; background-image:url(../img/input_pwd_open.png); background-position:0 0; background-repeat:no-repeat; position:relative; opacity:0.6;left: -20px;
+    top: 4px;}
+.pwd_on_off:hover{opacity:1;}
+.pwd_on_off_active{background-image:url(../img/input_pwd_close.png);}
+#answer_input{width:140px;}

@@ -1,0 +1,6 @@
+
+body{background:#e9e9e9;}
+#write_input{display:block;}
+#footer{width:1000px; margin:0 auto; padding-top:10px; border-top:3px solid #d5d2d2; margin-top:8px;}
+#footer .copyright{font-family:Arial; cursor:default;}
+#footer p{width:1000px; text-align:center; line-height:30px; color:#666;}

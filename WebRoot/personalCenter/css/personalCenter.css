@@ -1,0 +1,47 @@
+﻿@charset "utf-8";
+
+/*** reset ***/
+body,h1,h2,h3,p,form,ul,ol,input,textarea{margin:0; padding:0;}
+em{font-style:normal;}
+li { list-style:none; }
+a { text-decoration:none; }
+img { border:none; vertical-align:top; }
+table { border-collapse:collapse; }
+input,textarea { outline:none; }
+textarea { resize:none; overflow:auto; }
+body { font-size:12px; font-family:verdana,sans-serif; font-family: punctuation,"PingFangSC-Regular","Microsoft Yahei","sans-serif";}
+/***input_number自带样式***/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+}
+
+/***  end   ***/
+
+/* public */
+.clear { zoom:1; }
+.clear:after { content:''; display:block; clear:both; }
+.fl { float:left; }
+.fr { float:right; }
+
+/* end public */
+body{background-color:#e6fff1; position:relative; overflow-x:hidden;}
+
+#side_nav{width:20%; position:fixed; left:0; top:50px; z-index:2;}
+#side_nav li{border-bottom:1px dotted #fff; height:60px; width:130px;}
+#side_nav li a{display:block; position:relative; overflow:hidden; height:60px;}
+#side_nav li label{position:absolute; top:0; left:0; display:block; font-size:16px; text-align:center;  cursor:pointer; height:120px; width:130px;}
+#side_nav li span{background-color:#b6ff3e;color:#c715ff; display:block; height:60px; line-height:60px; font-weight:bold; width:130px;}
+#side_nav li .active{background-color:aqua; color:#fff;}
+
+#personalMessage{width:110%; margin-top:100px; margin-bottom:100px;}
+#changeMessage{width:110%; display:none; margin-top:100px; margin-bottom:100px;}
+#passChange{width:110%; display:none; margin-top:100px; margin-bottom:100px;}
+.myBoard{display:none;}
+#content{background:none !important;}
+#content .title h2{background:none; text-align:center;}
+#content .title h2 span,#content .title h2 em{float:none;}
+#footer{-position:absolute; bottom:0;}
+
+
+

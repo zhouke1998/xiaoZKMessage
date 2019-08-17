@@ -1,0 +1,5 @@
+﻿@charset "utf-8";
+
+#footer{width:100%; margin:0 auto; position:fixed; bottom:30px;}
+#footer .copyright{font-family:Arial; cursor:default;  border-top:3px solid #d5d2d2; margin:0 auto;}
+#footer p{width:1000px; text-align:center; line-height:30px;

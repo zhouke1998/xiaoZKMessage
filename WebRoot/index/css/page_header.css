@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/*** reset ***/
+body,h1,h2,h3,p,form,ul,ol,input,textarea{margin:0; padding:0;}
+em{font-style:normal;}
+li { list-style:none; }
+a { text-decoration:none; }
+img { border:none; vertical-align:top; }
+table { border-collapse:collapse; }
+input,textarea { outline:none; }
+textarea { resize:none; overflow:auto; }
+body { font-size:12px; font-family:verdana,sans-serif; font-family: punctuation,"PingFangSC-Regular","Microsoft Yahei","sans-serif";}
+/***input_number自带样式***/ 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+}
+input[type="number"]{
+-moz-appearance: textfield;
+}
+
+/* public */
+.clear { zoom:1; }
+.clear:after { content:''; display:block; clear:both; }
+.fl { float:left; }
+.fr { float:right; }
+
+/* end public */
+/***  end   ***/
+
+#header{background:#c3e8ff; padding:0 10%; position:fixed; width:100%; box-sizing:border-box; top:0; left:0; z-index:3;}
+#logo{float:left; margin-right:30px;}
+#header .nav li{float:left; font-size:20px; height:100%; margin-right:10px;}
+#header .nav li a{line-height:50px; color:#ffcd04; display:block; height:50px; width:100px; text-align:center;}
+#header .nav li:hover{background:#fff;}
+#header p{float:right; line-height:50px; color:#000; letter-spacing:0; font-size:14px;}
+#header p a{color:#04b1cc; margin-left:5px;}
+#personal_btn{display:none; letter-spacing:-1px !important;}
+#logout_btn{display:none; color:blue !important; font-size:12px; letter-spacing:-1px !important;}
+
+
+

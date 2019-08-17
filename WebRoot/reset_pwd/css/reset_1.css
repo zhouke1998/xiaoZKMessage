@@ -1,0 +1,117 @@
+﻿@charset "utf-8";
+
+.section>div {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.section .section_main>div {
+    margin-top: 100px;
+}
+.main_form {
+    width: 262px;
+    margin: 0 auto;
+}
+.mod-form-block {
+    margin-bottom: 15px;
+}
+
+.mod-form-block>label {
+    font-size: 14px;
+    line-height: 32px;
+}
+label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: default;
+}
+.mod-form-block>div {
+    position: relative;
+}
+
+.formblock.medium {
+    width: 258px;
+}
+
+.main_form {
+    width: 262px;
+    margin: 0 auto;
+}
+.formblock input {
+    width: 100%;
+    height: 36px;
+    border-radius: 2px;
+    border: 1px solid #9aa0a7;
+    line-height: 36px;
+    text-indent: 10px;
+    font-size: 14px;
+    background-color: #fff;
+    -webkit-transition: border-color .2s,box-shadow .2s;
+    transition: border-color .2s,box-shadow .2s;
+}
+.tips-error-text {
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 10px;
+    width: 220px;
+    height: 34px;
+    overflow: hidden;
+    border: 1px solid #ffbbba;
+    background-color: #ffefef;
+}
+.tips-error-text>div {
+    display: table-cell;
+    vertical-align: middle;
+    height: 34px;
+    line-height: 2;
+    font-size: 0;
+}
+.tips-error-text>div>span {
+    display: inline-block;
+    line-height: 16px;
+    padding: 0 10px;
+    font-size: 12px;
+    text-align: left;
+    color: #ff0a0a;
+}
+.mod-btn {
+    background-color: #2f86f6;
+    color: #fff;
+}
+.mod-btn {
+    box-shadow: 0 3px 0 #266ecb;
+}
+.mod-btn {
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 2px;
+    cursor: pointer;
+    -webkit-transition: color .2s,background-color .2s;
+    transition: color .2s,background-color .2s;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.mod-btn>span {
+    margin: 0 0 0 20px;
+    padding: 0 20px 0 0;
+}
+.mod-btn>span {
+    min-width: 80px;
+    height: 37px;
+    line-height: 37px;
+    font-size: 16px;
+}
+.mod-btn>span {
+    float: left;
+    z-index: 1111;
+    text-align: center;
+    background-position: right 0;
+}
+
+.mod-btn:hover {
+    background-color: #4692f4;
+}

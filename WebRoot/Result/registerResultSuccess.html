@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Register Result</title>
+</head>
+<script type="text/javascript">
+window.onload = function(){
+	function getQueryString(name) {
+	    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+	    var r = window.location.search.substr(1).match(reg);
+	    if (r != null) {
+	        return unescape(r[2]);
+	    }
+	    return null;
+	}
+	
+	document.getElementById("id").innerHTML = getQueryString("id")
+}
+</script>
+<body>
+<p>注册成功 ，  跳转到<a href="/login">登录</a></p><br/>
+<p>您的账号为<strong id="id" style="font-size:20px; color:red;"></strong></p>
+</body>
+</html>

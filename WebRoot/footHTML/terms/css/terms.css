@@ -1,0 +1,11 @@
+﻿@charset "utf-8";
+
+body{background:#fff;}
+#content{width:70%; margin:150px auto 0;}
+#content .content{margin-top:50px;}
+#content h1{text-align:center;}
+#content p{line-height:30px; font-size:16px; color:#333;}
+#content p a{color:blue;}
+#location{position:absolute; top:100px; left:100px;}
+
+#footer{position:absolute; bottom:50px;}

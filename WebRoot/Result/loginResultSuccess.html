@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Login Result</title>
+</head>
+<body>
+<script type="text/javascript" src="/index/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$.ajax({ url:"/ajax/getUrl",
+	type:"get",
+	cache: false,
+	timeout : 5000,
+	success:function(url){
+		if(url=="0" || url.indexOf("Result")!=0){
+			setTimeout(function(){window.location.href="/"},3000)
+		}else{
+			setTimeout(function(){window.location.href=url},3000)
+		}
+	},
+	error:function(XMLHttpRequest, textStatus, errorThrown){},
+	dataType: "json"})
+</script>
+登录成功 ，  3秒后自动跳转
+</body>
+</html>

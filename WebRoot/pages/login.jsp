@@ -1,0 +1,91 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="小ZK留言"/>
+    <meta name="description" content="小ZK留言网-登录！" />
+    <link href="index/css/page_header.css" rel="stylesheet">
+    <link href="../login/css/login.css" rel="stylesheet">
+    <link href="messageBoard/css/messageBoardFoot.css" rel="stylesheet">
+    <link href="index/img/ico_img/index.ico" rel="shortcut  icon" type="image/x-icon">
+    <script type="text/javascript" src="index/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="index/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="index/js/sha1.js"></script>
+    <script type="text/javascript" src="index/js/getState.js"></script>
+    <script type="text/javascript" src="login/js/login.js"></script>
+	<script>
+        function autoLogin() {
+            if($('#auto_login').prop('checked')){
+                $('#memory_pass').prop('checked',true)
+            }
+        }
+        function memoryPass() {
+            if(!$('#memory_pass').prop('checked')){
+                if($('#auto_login').prop('checked')){
+                    alert('自动登录必须保存密码！')
+                    $('#memory_pass').prop('checked',true)
+                }
+            }
+        }
+    </script>
+
+    <title>小ZK-登录</title>
+</head>
+<body>
+    <div id="header">
+        <div class="wrap clear">
+            <h1 id="logo"><a href="/"><img src="../index/img/logo_img/logo.png"/> </a> </h1>
+            <ul class="nav">
+                <li><a href="/">首页</a> </li>
+                <li><a href="messageBoard">留言板</a> </li>
+                <li><a href="personalCenter">个人中心</a> </li>
+            </ul>
+            <p>
+                您好,<a id="login_btn">请登录</a>
+            </p>
+        </div>
+    </div>
+    <div>
+        <p id="location">
+            <a href="/">首页</a>
+            >
+            <a>登录</a> 
+        </p>
+    </div>
+    <div class="login" id="login" >
+        <div class="form_info">
+            <form id='form_login' method="post" action="/form/loginResult">
+                <p class="clear"><span>账号:</span><input id="user" name="id" type="text" placeholder="请输入用户名(5-10位)" maxlength="10" minlength="5" required/></p>
+
+                <p class="clear"><span>密码:</span><input id="pass" name="password" type="password" placeholder="输入密码(6-16位)" maxlength="16" minlength="6" required/></p>
+                <p class="check clear">
+                    <label class="fl"><input id="memory_pass" onclick="memoryPass()" name="memory_pass" type="checkbox" />记住密码</label>
+                    <label class="fl"><input id="auto_login" onclick="autoLogin()" name="auto_login" type="checkbox" />自动登录</label>
+                    <label class="fr reg"><a href="register">没有账号?立即注册</a></label>
+                </p>
+                <p class="sub" id="sub_login"><a href="javascript:">登录</a> </p>
+                <input name="action" value="loginResult" type="hidden"/>
+                <input id="hidden_sub" type="submit"/>
+            </form>
+            <label id="success_login">
+                <span></span>
+                <em>登录成功!</em>
+            </label>
+            <label id="fail_login">
+                <span></span>
+                <em>登录失败!账号或密码错误。</em>
+            </label>
+        </div>
+    </div>
+    <div id="find_pass">
+    	<a href="/reset_pwd/input_account">找回密码</a> 
+    </div>
+    <div id="footer">
+        <p class="copyright">
+            Copyright © ZK All Rights Reserved.
+        </p>
+    </div>
+</body>
+</html>

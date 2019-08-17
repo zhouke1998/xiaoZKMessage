@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mypack.mapper.CommentMapper">
+	<select id="queryComments" parameterType="string" resultType="comment">
+		select username,commContent,comments.id,time,userId from users,comments where contentId=#{arg0} and comments.userId=users.id ORDER BY id asc
+	</select>
+	
+	<insert id="insertComment" parameterType="comment">
+		insert into comments VALUES(default,#{contentId},#{commcontent},#{userId},#{time})
+	</insert>
+	
+	<delete id="deleteComment" parameterType="comment">
+		delete from comments where userId=#{userId} and id=#{id}
+	</delete>
+	
+	<update id="updateCommentsNum0" parameterType="comment">
+		update content set commentsNum=commentsNum+(-1) where messageId=(select contentId from comments where id=#{id} and userId=#{userId})
+	</update>
+	<update id="updateCommentsNum1" parameterType="string">
+		update content set commentsNum=commentsNum+1 where messageId=#{arg0}
+	</update>
+</mapper>

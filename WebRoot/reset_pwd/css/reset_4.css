@@ -1,0 +1,69 @@
+﻿@charset "utf-8";
+
+#reset_body{width:100%;}
+#reset_body>div {
+    width: 1000px;
+    margin: 0 auto;
+	margin-top:80px;
+	text-align: center;
+}
+
+#reset_body .completed_pic {
+	width: 80px;
+    height: 80px;
+    margin: 0 auto;
+	
+}
+#reset_body .success .completed_pic{
+	background-image: url(../img/common.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-color: none;
+}
+#reset_body .error .completed_pic {
+    background-image: url(../img/common.png);
+    background-position: 0 -134px;
+    background-repeat: no-repeat;
+    background-color: none;
+	
+}
+#reset_body .completed_text {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+}
+#reset_body .completed_tips {
+    margin-bottom: 18px;
+    font-size: 12px;
+    line-height: 20px;
+}
+.mod-btn {
+    background-color: #2f86f6;
+    color: #fff;
+	box-shadow: 0 3px 0 #266ecb;
+	display: inline-block;
+    box-sizing: border-box;
+    border-radius: 2px;
+    cursor: pointer;
+    -webkit-transition: color .2s,background-color .2s;
+    transition: color .2s,background-color .2s;
+}
+.mod-btn >span {
+    margin: 0 0 0 20px;
+    padding: 0 20px 0 0;
+	min-width: 80px;
+    height: 37px;
+    line-height: 37px;
+    font-size: 16px;
+	float: left;
+    z-index: 1111;
+    text-align: center;
+    background-position: right 0;
+}
+p {
+	font-family: "Microsoft Yahei", 微软雅黑, Tahoma, Arial, Helvetica, STHeiti;
+    border: none;
+    margin: 0;
+    padding: 0;
+}

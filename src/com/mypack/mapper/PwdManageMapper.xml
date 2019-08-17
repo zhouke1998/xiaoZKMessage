@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mypack.mapper.PwdManageMapper">
+	<select id="getPwd_Q" parameterType="string" resultType="string">
+		select pwd_Q from pwd_qa where userId=#{arg0}
+	</select>
+	<select id="checkPwd_A" parameterType="pwdManage" resultType="int">
+		select count(*) from pwd_qa where userId=#{userId} and pwd_A=#{pwd_A}
+	</select>
+	<update id="setNewPwd" parameterType="pwdManage">
+		UPDATE users SET password=#{password} WHERE id = #{userId};
+	</update>
+	<insert id="insPwdManage" parameterType="pwdManage">
+		insert into pwd_qa values(#{userId},#{pwd_Q},#{pwd_A})
+	</insert>
+	
+	<update id="updPwdManage" parameterType="pwdManage">
+		update pwd_qa set pwd_Q=#{pwd_Q},pwd_A=#{pwd_A} where userId=#{userId}
+	</update>
+</mapper>

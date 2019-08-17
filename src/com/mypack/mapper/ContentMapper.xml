@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mypack.mapper.ContentMapper">
+
+	<select id="queryAll" resultType="int">
+		SELECT COUNT(*) AS total FROM content
+	</select>
+	
+	<select id="queryPage" parameterType="int" resultType="content">
+		SELECT messageId,time,content,username,likeNum,img_urls,commentsNum FROM content,users WHERE content.userId=users.id ORDER BY messageID DESC LIMIT #{arg0},10
+	</select>
+
+	<insert id="insertMessage" parameterType="content">
+		INSERT INTO content (userId,time,content,likeNum,likesPeopleId,img_urls) VALUES (#{userId},#{time},#{content},'0','',#{img_urls})
+	</insert>
+	
+	<select id="QueryPersonalMessageNum" parameterType="string" resultType="int">
+		SELECT count(*) FROM content,users where content.userId = users.id and username=#{arg0}
+	</select>
+	
+	<select id="QueryPersonalPage" parameterType="map" resultType="content">
+		SELECT messageId,time,content,username,likeNum,commentsNum,img_urls FROM content,users WHERE content.userId=users.id AND username=#{name} ORDER BY messageID DESC LIMIT #{start},10
+	</select>
+	
+	<delete id="deleteMessage" parameterType="content">
+		DELETE FROM content WHERE messageId = #{messageId} AND userId = #{userId}
+	</delete>
+</mapper>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="小ZK留言"/>
+    <meta name="description" content="小ZK留言网-个人中心！" />
+    <link href="../index/css/page_header.css" rel="stylesheet">
+    <!---footCss --->
+    <link href="../messageBoard/css/messageBoardFoot.css" rel="stylesheet">
+    <script type="text/javascript" src="../index/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/personalCenter.js"></script>
+    <!---personalMessage --->
+    <link type="text/css" href="css/personalMessage.css" rel="stylesheet" >
+    <!---changeMessage --->
+    <script src="js/angularjs.js"></script>
+    <script src="js/changeMessage.js"></script>
+    <link type="text/css" href="css/changeMessage.css" rel="stylesheet" >
+    <!---passChange --->
+    <link type="text/css" href="css/passChange.css" rel="stylesheet" >
+    <!---myBoard --->
+    <link href="../index/css/board.css" rel="stylesheet">
+    <!---本页面css --->
+    <link href="css/personalCenter.css" rel="stylesheet">
+
+    <title>小ZK-个人中心</title>
+</head>
+<body  ng-app ="myApp" class="clear">
+    <div id="header">
+        <div class="wrap clear">
+            <h1 id="logo"><a href="/"><img src="../index/img/logo_img/logo.png"/> </a> </h1>
+            <ul class="nav">
+                <li><a href="/">首页</a> </li>
+                <li><a href="messageBoard">留言板</a> </li>
+                <li style="background-color:#fff;"><a href="personalCenter">个人中心</a> </li>
+            </ul>
+            <p>
+                您好,<a id="login_btn" href="#">请登录</a>
+            </p>
+        </div>
+    </div>
+    <div id="side_nav">
+        <ul>
+            <li>
+                <a id="btn_perMess" href="javascript:">
+                    <label>
+                        <span class="nor">个人信息</span>
+                        <span class="active">个人信息</span>
+                    </label>
+                </a>
+            </li>
+            <li>
+                <a  id="btn_changeMess"  href="javascript:">
+                    <label>
+                        <span class="nor">信息修改</span>
+                        <span class="active">信息修改</span>
+                    </label>
+                </a>
+            </li>
+            <li>
+                <a  id="btn_passChange"  href="javascript:">
+                    <label>
+                        <span class="nor">密码修改</span>
+                        <span class="active">密码修改</span>
+                    </label>
+                </a>
+            </li>
+            <li>
+                <a  id="btn_myBoard"  href="javascript:">
+                    <label>
+                        <span class="nor">我的留言</span>
+                        <span class="active">我的留言</span>
+                    </label>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="personalMessage">
+        <form action="#" id="mes">
+            <div class="form_group">
+                <label>用户名:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>邮箱:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>年龄:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>性别:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>爱好:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>所在地:</label>
+                <div class="inline">
+                    <span>？</span>
+                </div>
+            </div>
+        </form>
+    </div >
+    <div id="changeMessage">
+        <form ng-controller="form_con" name="myForm" action="#" id="reg">
+            <div class="form_group" ng-class="{'have_error':myForm.username.$dirty && myForm.username.$invalid}">
+                <label>用户名:</label>
+                <div class="inline">
+                    <input placeholder="用户名(5-10位)" type="text" autocomplete="off" name="username" ng-required="true" ng-pattern="/^[a-zA-Z]{1}/" ng-maxlength="10" ng-minlength="5" ng-model="data.name"/>
+                    <div ng-show="myForm.username.$dirty && myForm.username.$error.minlength && !myForm.username.$error.pattern">用户名不能小于5位</div>
+                    <div ng-show="myForm.username.$dirty && myForm.username.$error.maxlength && !myForm.username.$error.pattern">用户名不能大于10位</div>
+                    <div ng-show="myForm.username.$dirty && myForm.username.$error.pattern">用户名必须以英文字母开头</div>
+                </div>
+            </div>
+
+            <div class="form_group" ng-class="{'have_error':myForm.email.$dirty && myForm.email.$invalid}">
+                <label>邮箱:</label>
+                <div class="inline">
+                    <input placeholder="邮箱" type="email" autocomplete="off" name="email" ng-required="true" ng-maxlength="20" ng-minlength="5" ng-model="data.email"/>
+                    <div ng-show="myForm.email.$dirty && myForm.email.$error.minlength">邮箱不能小于5位</div>
+                    <div ng-show="myForm.email.$dirty && myForm.email.$error.maxlength">邮箱不能大于20位</div>
+                    <div ng-show="myForm.email.$dirty && myForm.email.$error.email && !myForm.email.$error.minlength && !myForm.email.$error.maxlength">邮箱格式不正确</div>
+                </div>
+            </div>
+            <div class="form_group" ng-class="{'have_error':myForm.age.$dirty && myForm.age.$invalid}">
+                <label>年龄:</label>
+                <div class="inline">
+                    <input placeholder="年龄" type="number" autocomplete="off" name="age" ng-required="true" max="99" min="10" ng-model="data.age"/>
+                    <div ng-show="myForm.age.$dirty && (myForm.age.$error.min || myForm.age.$error.max)">年龄为10~99</div>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>性别:</label>
+                <div class="inline">
+                    <span><input type="radio" ng-required="true" name="sex" ng-model="data.sex" value="1"/>男</span>
+                    <span><input type="radio" ng-required="true" name="sex" ng-model="data.sex" value="0"/>女</span>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>爱好:</label>
+                <div class="inline">
+                <span ng-repeat="hobby in hobbies">
+                    <input class="checkbox" type="checkbox" name="likes" ng-value="hobbies[$index].name" ng-checked ="data.hobbies == undefine ? false : data.hobbies.indexOf(hobby.id) !== -1" ng-click="changeCheck(hobby.id)" />{{hobby.name}}
+                </span>
+                    <div ng-show="data.hobbies === undefined || data.hobbies.length === 0">您没有爱好吗？</div>
+                </div>
+            </div>
+            <div class="form_group">
+                <label>所在地:</label>
+                <div class="inline">
+                    <input placeholder="所在地(3-20位)" type="text" autocomplete="off" name="location" ng-required="true" ng-maxlength="20" ng-minlength="3" ng-model="data.location"/>
+                    <div ng-show="myForm.location.$dirty && myForm.location.$error.minlength">所在地不能小于3位</div>
+                    <div ng-show="myForm.location.$dirty && myForm.location.$error.maxlength">所在地不能大于20位</div>
+                </div>
+            </div>
+            <div class="form_group">
+                <div class="sub_reset">
+                    <input class="reset" type="button" ng-click="reset()" value="重置">
+                    <input class="sub" type="submit" ng-disabled="myForm.$invalid" value="确定修改">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="passChange">
+        <form name="myForm" action="#" id="pass">
+            <div class="form_group" ng-class="{'have_error':myForm.password.$dirty && myForm.password.$invalid}">
+                <label>密码:</label>
+                <div class="inline">
+                    <input placeholder="密码" type="password" autocomplete="off" name="password" ng-required="true" ng-maxlength="16" ng-minlength="6" ng-model="data.password2"/>
+                    <div ng-show="myForm.password.$dirty && myForm.password.$error.minlength">密码不能小于6位</div>
+                    <div ng-show="myForm.password.$dirty && myForm.password.$error.maxlength">密码不能大于16位</div>
+                </div>
+            </div>
+            <div class="form_group" ng-class="{'have_error':myForm.passwordConfirm.$dirty && myForm.passwordConfirm.$invalid || data.password != data.passwordConfirm}">
+                <label>确认密码:</label>
+                <div class="inline">
+                    <input placeholder="确认密码" type="password" autocomplete="off" name="passwordConfirm" ng-required="true" ng-maxlength="10" ng-minlength="5" ng-model="data.passwordConfirm2"/>
+                    <div ng-show="myForm.passwordConfirm.$dirty && myForm.passwordConfirm.$error.minlength || myForm.passwordConfirm.$error.maxlength">密码不符合规则</div>
+                    <div ng-show="myForm.passwordConfirm.$dirty && data.password2 !== data.passwordConfirm2 && !myForm.passwordConfirm.$error.minlength && !myForm.passwordConfirm.$error.maxlength">密码输入不一致</div>
+                </div>
+            </div>
+
+            <div class="form_group">
+                <div class="sub_reset">
+                    <input class="reset" type="button" value="重置">
+                    <input class="sub" type="submit" ng-disabled="myForm.$invalid || data.password2 !== data.passwordConfirm2" value="确定修改">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="content" class="myBoard">
+        <div class="title leaveMessage">
+            <h2><em>MY MESSAGE</em><span>我的留言</span></h2>
+            <div class="leaveMessageContent">
+                <ul>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>200</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>199</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>198</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>197</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>196</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>195</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>194</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>193</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>192</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="messageHeader clear">
+                            <div class="user_info">
+                                <p class="user_name"><a href="#">夏雨 秋风</a>：</p>
+                                <time>1月21日 12:59</time>
+                            </div>
+                            <div class="floor">
+                                <span>191</span>楼
+                            </div>
+                        </div>
+                        <div class="messageContent">
+                            <p> 曾经的非主流，如今的兵哥哥。</p>
+                        </div>
+                        <div class="messageFooter clear">
+                            <div class="del clear">
+                                <a href="javascript:"><i class="ico_del"></i>删除</a>
+                            </div>
+                            <div class="like clear">
+                                <a href="javascript:"><i class="ico_like isLike"></i></a>
+                                <span>(100)</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pages clear">
+                    <span class="jump">转到<input class="input_num" type="number"/>页<input class="input_certain" type="button" value="确定"/> </span>
+                    <a href="javascript:" class="next_page">下一页</a>
+                    <a href="javascript:" last_page>尾页</a>
+                    <span class="count">
+                            <a href="javascript:" class="num" value="99">99</a>
+                            <a >...</a>
+                            <a href="javascript:" class="num" value="4">4</a>
+                            <a href="javascript:" class="num" value="3">3</a>
+                            <a href="javascript:" class="num" value="2">2</a>
+                            <span>1</span>
+                        </span>
+                    <a href="javascript:" class="first_page">首页</a>
+                    <a href="javascript:" class="front_page">上一页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p class="copyright">
+            Copyright © ZK All Rights Reserved.
+        </p>
+    </div>
+</body>
+</html>
